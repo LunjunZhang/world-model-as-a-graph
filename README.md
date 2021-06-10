@@ -3,7 +3,7 @@
 This is the code accompanying the paper: **World Model as a Graph: 
 Learning Latent Landmarks for Planning** (ICML 2021). 
 
-By [Lunjun Zhang](www.cs.toronto.edu/~lunjun/), [Ge Yang](https://scholar.google.com/citations?user=vaQcF6kAAAAJ), 
+By [Lunjun Zhang](http://www.cs.toronto.edu/~lunjun/), [Ge Yang](https://scholar.google.com/citations?user=vaQcF6kAAAAJ), 
 [Bradly Stadie](https://bstadie.github.io/).
 
 A link to our paper can be found on [arXiv](https://arxiv.org/abs/2011.12491).
