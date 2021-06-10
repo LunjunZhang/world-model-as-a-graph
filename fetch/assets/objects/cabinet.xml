@@ -1,0 +1,5 @@
+<mujoco>
+	<geom conaffinity="1" contype="3" pos="0 0.00 0.1775" rgba="0.50196078 0.69019608 1. 0.4" size="0.12 0.11 0.005" type="box" material="block_mat" mass="10000"/>
+	<geom conaffinity="1" contype="3" pos="0.125 0 0.09"  rgba="0.50196078 0.69019608 1. 0.4" size="0.01 0.11 0.09" type="box" material="block_mat" mass="10000"/>
+	<geom conaffinity="1" contype="3" pos="-0.125 0 0.09" rgba="0.50196078 0.69019608 1. 0.4" size="0.01 0.11 0.09" type="box" material="block_mat" mass="10000"/>
+</mujoco>

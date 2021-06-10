@@ -1,0 +1,7 @@
+<mujoco>
+  <geom size="0.1 0.005 0.01" type="box" contype="3" pos="0 -0.1 0.005" rgba="0.50196078 0.69019608 1. 1." material="block_mat"/>
+  <geom size="0.1 0.005 0.01" type="box" contype="3" pos="0 0.1 0.005" rgba="0.50196078 0.69019608 1. 1." material="block_mat"/>
+  <geom size="0.005 0.1 0.025" type="box" contype="3" pos="0.1 0 0.0125" rgba="0.50196078 0.69019608 1. 1." material="block_mat"/>
+  <geom size="0.005 0.1 0.025" type="box" contype="3" pos="-0.1 0 0.0125" rgba="0.50196078 0.69019608 1. 1." material="block_mat"/>
+  <geom size="0.1 0.1 0.005" type="box" contype="3" pos="0 0 0" rgba="0.50196078 0.69019608 1. 1." material="block_mat"/>
+</mujoco>
