@@ -6,7 +6,7 @@ Learning Latent Landmarks for Planning** (ICML 2021).
 By [Lunjun Zhang](www.cs.toronto.edu/~lunjun/), [Ge Yang](https://scholar.google.com/citations?user=vaQcF6kAAAAJ), 
 [Bradly Stadie](https://bstadie.github.io/).
 
-A link to our paper can be found on [arXiv](https://arxiv.org/abs/2106.01345).
+A link to our paper can be found on [arXiv](https://arxiv.org/abs/2011.12491).
 
 Videos / blog can be found on our [website](https://sites.google.com/view/latent-landmarks/).
 
