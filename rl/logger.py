@@ -6,6 +6,7 @@ import json
 import time
 import datetime
 import tempfile
+import warnings
 from collections import defaultdict
 from contextlib import contextmanager
 
@@ -15,6 +16,31 @@ WARN = 30
 ERROR = 40
 
 DISABLED = 50
+
+
+def mpi_weighted_mean(comm, local_name2valcount):
+    """
+    Perform a weighted average over dicts that are each on a different node
+    Input: local_name2valcount: dict mapping key -> (value, count)
+    Returns: key -> mean
+    """
+    all_name2valcount = comm.gather(local_name2valcount)
+    if comm.rank == 0:
+        name2sum = defaultdict(float)
+        name2count = defaultdict(float)
+        for n2vc in all_name2valcount:
+            for (name, (val, count)) in n2vc.items():
+                try:
+                    val = float(val)
+                except ValueError:
+                    if comm.rank == 0:
+                        warnings.warn('WARNING: tried to compute mean on non-float {}={}'.format(name, val))
+                else:
+                    name2sum[name] += val * count
+                    name2count[name] += count
+        return {name: name2sum[name] / name2count[name] for name in name2sum}
+    else:
+        return {}
 
 
 class KVWriter(object):
@@ -347,10 +373,9 @@ class Logger(object):
         if self.comm is None:
             d = self.name2val
         else:
-            import mpi_util
-            d = mpi_util.mpi_weighted_mean(self.comm,
-                                           {name: (val, self.name2cnt.get(name, 1))
-                                            for (name, val) in self.name2val.items()})
+            d = mpi_weighted_mean(self.comm,
+                                  {name: (val, self.name2cnt.get(name, 1))
+                                   for (name, val) in self.name2val.items()})
             if self.comm.rank != 0:
                 d['dummy'] = 1  # so we don't get a warning about empty dict
         out = d.copy()  # Return the dict for unit testing purposes
