@@ -14,7 +14,7 @@ Videos / blog can be found on our [website](https://sites.google.com/view/latent
 
 ![image info](./figures/l3p.png)
 
-Model-based RL agents today plans using step-by-step virtual rollouts in a learned dynamics model. 
+Model-based RL agents today plan using step-by-step virtual rollouts in a learned dynamics model. 
 This type of world model quickly diverges from reality as the planning horizon increases. 
 Humans, however, can do planning by **analyzing the structure of a problem in the large** 
 and **decomposing it into simpler sub-problems**. 
